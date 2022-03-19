@@ -1,38 +1,109 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --black: #2c2b2b;
+  --white: #faf5f5;
+}
+
 .App {
   text-align: center;
+  color: var(--black);
+}
+/* Header  */
+.header {
+  margin: 1rem 0.4rem;
+}
+.headerImg {
+  background-image: url("/public/hero.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 10rem;
+  width: 10rem;
+  margin: 0 auto;
+}
+h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+.headerInput {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  margin: 2rem 0;
+  height: 3rem;
+}
+.headerInput input {
+  font-size: 1.4rem;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 10px 0 0 10px;
+  outline: none;
+  letter-spacing: 1px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.headerInput button {
+  font-size: 1.4rem;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 0 10px 10px 0px;
+}
+/* Background */
+.bgMain {
+  background-image: url("/public/bg1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -10;
+}
+/* To Do List */
+.toDoList {
+  display: grid;
+  gap: 1.5rem;
+  margin: 1rem 0.4rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* To Do Item */
+.toDoItemContainer {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  max-width: 50rem;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 6px 6px 13px 4px rgba(68, 68, 68, 0.32);
+}
+
+.toDoItemText {
+  margin-right: auto;
+  padding: 0.5rem 0.8rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  max-width: 100%;
+}
+.toDoItemContainer button {
+  border: none;
+  border-radius: 0 10px 10px 0;
+}
+
+/* Media queries */
+@media only screen and (min-width: 45rem) {
+  body {
+    background-color: pink;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .toDoItemContainer {
+    width: 44rem;
+    margin: 0 auto;
   }
-  to {
-    transform: rotate(360deg);
+  .headerInput {
+    width: 44rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
