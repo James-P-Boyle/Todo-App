@@ -6,16 +6,28 @@ export default function Header(props) {
   const randomId = Math.floor(Math.random() * 1000);
 
   const createTodo = () => {
-    props.setTodos((prevState) => {
-      return [...prevState, { id: randomId, task: input, isDone: false }];
-    });
-    setInput("");
+    if (!input) {
+      alert("You have to write something!");
+    } else {
+      props.setTodos((prevState) => {
+        let result = [
+          ...prevState,
+          { id: randomId, task: input, isDone: false },
+        ];
+
+        localStorage.setItem("todos", JSON.stringify(result));
+        return result;
+      });
+      setInput("");
+    }
   };
 
   return (
     <div className="header">
-      <div className="headerImg"></div>
+      <div className="bgMain"></div>
+
       <h1>TO DO APP</h1>
+
       <div className="headerInput">
         <input
           onChange={(e) => {
@@ -27,7 +39,6 @@ export default function Header(props) {
         />
         <button onClick={createTodo}>+</button>
       </div>
-      <hr />
     </div>
   );
 }

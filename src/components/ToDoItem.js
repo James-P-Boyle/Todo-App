@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 export default function ToDoItem(props) {
-  const [backgroundColor, setBackgrounColor] = useState();
-
   const deleteTodoItem = () => {
     props.setTodos((prevState) => {
-      return prevState.filter((todo) => {
+      const result = prevState.filter((todo) => {
         return todo.id !== props.content.id;
       });
+      localStorage.setItem("todos", JSON.stringify(result));
+      return result;
     });
   };
 
