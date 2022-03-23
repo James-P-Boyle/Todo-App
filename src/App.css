@@ -10,49 +10,14 @@
 :root {
   --black: #2c2b2b;
   --white: #faf5f5;
+  --red: rgb(230, 9, 9);
 }
-
 .App {
   text-align: center;
   color: var(--black);
   font-family: "Roboto", sans-serif;
   letter-spacing: 1px;
 }
-/* Header  */
-.header {
-  margin: 1rem 0.4rem;
-}
-h1 {
-  font-size: clamp(2.3rem, 6vw, 7rem);
-  letter-spacing: 2px;
-  margin-top: 2rem;
-}
-.headerInput {
-  display: grid;
-  grid-template-columns: 5fr 1fr;
-  margin: 2rem 0;
-  height: 3rem;
-}
-.headerInput input {
-  font-size: clamp(1.3rem, 2vw, 2.5rem);
-  padding: 0.5rem 0.8rem;
-  border: none;
-  border-radius: 10px 0 0 10px;
-  outline: none;
-  letter-spacing: 1px;
-  font-weight: 700;
-}
-
-.headerInput button {
-  font-size: 1.4rem;
-  padding: 0.5rem 0.8rem;
-  border: none;
-  border-radius: 0 10px 10px 0px;
-}
-.headerInput button:hover {
-  cursor: pointer;
-}
-/* Background */
 .bgMain {
   background-image: url("/public/bg1.png");
   background-repeat: no-repeat;
@@ -64,30 +29,68 @@ h1 {
   left: 0;
   z-index: -10;
 }
+/* Header  */
+.header {
+  margin: 1rem 0.4rem;
+}
+h1 {
+  font-size: clamp(2.3rem, 6vw, 7rem);
+  letter-spacing: 2px;
+  margin-top: 2rem;
+}
+h1:hover {
+  cursor: default;
+}
+.headerInput {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  margin: 2rem 0;
+  height: 3rem;
+}
+.headerInput input {
+  font-size: clamp(1rem, 2vw, 2rem);
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 10px 0 0 10px;
+  outline: none;
+  letter-spacing: 1px;
+  font-weight: 700;
+  overflow: auto;
+}
+.headerInput button {
+  font-size: 1.4rem;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 0 10px 10px 0px;
+}
+.headerInput button:hover {
+  cursor: pointer;
+}
 /* To Do List */
 .toDoList {
   display: grid;
   gap: 1.5rem;
-  margin: 1rem 0.4rem;
+  margin: 2rem 0.4rem;
 }
-
 /* To Do Item */
 .toDoItemContainer {
   display: grid;
-  grid-template-columns: 5fr 1fr;
+  grid-template-columns: 8fr 1fr 1fr;
   max-width: 50rem;
   background-color: var(--white);
   border-radius: 10px;
   box-shadow: 7px 7px 15px 5px rgba(44, 43, 43, 0.507);
 }
+.toDoItemContainer h2 {
+  text-align: left;
+}
 .toDoItemContainer:hover {
   box-shadow: 6px 6px 13px 4px rgba(10, 10, 10, 0.616);
-
-  cursor: pointer;
 }
-
+.toDoItemContainer h2:hover {
+  cursor: default;
+}
 .toDoItemText {
-  margin-right: auto;
   padding: 0.5rem 0.8rem;
   word-wrap: break-word;
   word-break: break-all;
@@ -100,11 +103,32 @@ h1 {
 }
 .toDoItemContainer button:hover {
   cursor: pointer;
-  color: rgb(230, 9, 9);
+  color: var(--red);
   font-weight: 700;
   text-decoration: underline;
 }
-
+.editInput {
+  display: grid;
+}
+.editInput input {
+  border: none;
+  outline: none;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 2vw, 2.5rem);
+  padding: 0.5rem 0.8rem;
+  border-radius: 10px 10px 0 0;
+  overflow: auto;
+}
+.editInput button {
+  font-size: clamp(1.3rem, 2vw, 2.5rem);
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 0 0 10px 10px;
+}
+.editInput button:hover {
+  letter-spacing: 2px;
+}
 /* Media queries */
 @media only screen and (min-width: 45rem) {
   body {
