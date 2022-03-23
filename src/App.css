@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap");
 *,
 *::before,
 *::after {
@@ -10,7 +9,8 @@
 :root {
   --black: #2c2b2b;
   --white: #faf5f5;
-  --red: rgb(230, 9, 9);
+  --red: #e54b4b;
+  --green: #4c956c4b;
 }
 .App {
   text-align: center;
@@ -37,6 +37,7 @@ h1 {
   font-size: clamp(2.3rem, 6vw, 7rem);
   letter-spacing: 2px;
   margin-top: 2rem;
+  font-family: "Pacifico", cursive;
 }
 h1:hover {
   cursor: default;
@@ -48,7 +49,7 @@ h1:hover {
   height: 3rem;
 }
 .headerInput input {
-  font-size: clamp(1rem, 2vw, 2rem);
+  font-size: clamp(1.5rem, 2vw, 2rem);
   padding: 0.5rem 0.8rem;
   border: none;
   border-radius: 10px 0 0 10px;
@@ -64,8 +65,11 @@ h1:hover {
   border-radius: 0 10px 10px 0px;
 }
 .headerInput button:hover {
+  background-color: var(--green);
+  color: var(--black);
   cursor: pointer;
 }
+
 /* To Do List */
 .toDoList {
   display: grid;
@@ -106,6 +110,7 @@ h1:hover {
   color: var(--red);
   font-weight: 700;
   text-decoration: underline;
+  background-color: #dabfbf;
 }
 .editInput {
   display: grid;
@@ -126,8 +131,9 @@ h1:hover {
   border: none;
   border-radius: 0 0 10px 10px;
 }
-.editInput button:hover {
-  letter-spacing: 2px;
+.editInput .saveBtn:hover {
+  background-color: var(--green);
+  color: var(--black);
 }
 /* Media queries */
 @media only screen and (min-width: 45rem) {

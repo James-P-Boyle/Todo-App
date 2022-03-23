@@ -41,11 +41,14 @@ export default function ToDoItem({ todo, setTodos }) {
               }}
               value={value}
             />
-            <button onClick={saveEdit}>Save</button>
+            <button className="saveBtn" onClick={saveEdit}>
+              Save
+            </button>
           </div>
         )}
       </div>
       <button
+        className="editBtn"
         onClick={() => {
           setFlag(!flag);
         }}
