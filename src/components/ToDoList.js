@@ -5,11 +5,7 @@ export default function ToDoList(props) {
     <div className="toDoList">
       {props.toDoArray.map((element, index) => {
         return (
-          <ToDoItem
-            key={element.id}
-            content={element}
-            setTodos={props.setTodos}
-          />
+          <ToDoItem key={element.id} todo={element} setTodos={props.setTodos} />
         );
       })}
     </div>
