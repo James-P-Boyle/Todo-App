@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaPlus } from "react-icons/fa";
 
 export default function Header(props) {
   const [input, setInput] = useState("");
@@ -37,7 +38,9 @@ export default function Header(props) {
           value={input}
           placeholder="What needs doing?"
         />
-        <button onClick={createTodo}>+</button>
+        <button onClick={createTodo}>
+          <FaPlus />
+        </button>
       </div>
     </div>
   );
