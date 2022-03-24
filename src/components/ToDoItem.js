@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaEdit, FaTrashAlt, FaPlusCircle, FaTimes } from "react-icons/fa";
 
 export default function ToDoItem({ todo, setTodos }) {
   const [flag, setFlag] = useState(false);
@@ -48,15 +49,17 @@ export default function ToDoItem({ todo, setTodos }) {
         )}
       </div>
       <button
-        className="editBtn"
+        className={!flag ? "edidBtn" : "cancelBtn"}
         onClick={() => {
           setFlag(!flag);
         }}
       >
-        {!flag ? "Edit" : "Cancel"}
+        {!flag ? <FaEdit /> : <FaTimes />}
       </button>
 
-      <button onClick={deleteTodoItem}>DEL</button>
+      <button onClick={deleteTodoItem}>
+        <FaTrashAlt />
+      </button>
     </div>
   );
 }
