@@ -23,6 +23,12 @@ export default function Header(props) {
     }
   };
 
+  const enterKey = (e) => {
+    if (e.key === "Enter") {
+      createTodo();
+    }
+  };
+
   return (
     <div className="header">
       <div className="bgMain"></div>
@@ -34,6 +40,7 @@ export default function Header(props) {
           onChange={(e) => {
             setInput(e.target.value);
           }}
+          onKeyDown={enterKey}
           type="text"
           value={input}
           placeholder="What needs doing?"
