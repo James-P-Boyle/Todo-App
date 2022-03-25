@@ -8,14 +8,19 @@ I decided to keep this app strictly on the front so I could solely focus on Reac
 ## How to use the App
 
 - **Add** => After entering your Todo Item in the input simply press the "**+**" icon or hit enter! Your icon will now be displayed below...
+
 - **Edit** => Not happy with your Todo? No worries, simply hit the edit icon to update your existing Todo.
+
 - **Save your editted text** => After hitting the edit button a new input with your old text will appear. Simply change the text and hit the "Save Button". Your edited text will now be displayed thanks to React Hooks!
+
 - **Cancel the edit** => Change your mind on editting? No problem! Just hit the new cancel button that appears as a "**X**". Your old Todo will remain intact.
+
 - **Delete** => Once your finished with your Todo, simply hit the trash icon and its gone!
 
 ## Dependencies
 
 - **useState**
+
 - **react-icons/fa**
 
 ## Installing
